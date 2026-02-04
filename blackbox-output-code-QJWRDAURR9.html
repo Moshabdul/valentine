@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #ffe6f2;
+            color: #333;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1, p {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="initial">
+        <h1>Hi COMFORT ❤️, will you be my Valentine?</h1>
+        <button id="yes1">Yes</button>
+        <button id="no1">No</button>
+    </div>
+    <div id="yesResponse" class="hidden">
+        <p>Yayyy 🥰🌹 COMFORT, you just made my day! Happy Valentine ❤️</p>
+    </div>
+    <div id="sure" class="hidden">
+        <p>Are you sure?</p>
+        <button id="yes2">Yes</button>
+        <button id="no2">No</button>
+    </div>
+    <div id="finalYes" class="hidden">
+        <p>So, yes — you’ve agreed to be my Valentine ❤️</p>
+    </div>
+
+    <script>
+        document.getElementById('yes1').addEventListener('click', function() {
+            document.getElementById('initial').classList.add('hidden');
+            document.getElementById('yesResponse').classList.remove('hidden');
+        });
+        document.getElementById('no1').addEventListener('click', function() {
+            document.getElementById('initial').classList.add('hidden');
+            document.getElementById('sure').classList.remove('hidden');
+        });
+        document.getElementById('yes2').addEventListener('click', function() {
+            document.getElementById('sure').classList.add('hidden');
+            document.getElementById('finalYes').classList.remove('hidden');
+        });
+        document.getElementById('no2').addEventListener('click', function() {
+            document.getElementById('sure').classList.add('hidden');
+            document.getElementById('initial').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
